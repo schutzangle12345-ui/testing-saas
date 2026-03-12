@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | testing-saas - Mission for Reliable Stock Data</title>
+    <meta name="description" content="Learn about testing-saas, our mission to provide free, reliable stock market data, and how we empower investors and developers with stable financial APIs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0066FF;
+            --color-primary-dark: #0052CC;
+            --color-background: #FFFFFF;
+            --color-surface: #F9FAFB;
+            --color-text: #111827;
+            --color-text-muted: #4B5563;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --container-max: 1100px;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        header {
+            border-bottom: 1px solid #E5E7EB;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--color-primary);
+        }
+
+        .cta-button {
+            background-color: var(--color-primary);
+            color: white !important;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            padding: 8rem 0 5rem;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Story Section */
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .grid-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .content-label {
+            color: var(--color-primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Values Section */
+        .values-section {
+            background-color: var(--color-surface);
+            border-radius: 24px;
+            padding: 5rem 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Stats/Impact */
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #E5E7EB;
+            padding-top: 4rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item span {
+            display: block;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .stat-label {
+            font-weight: 500;
+            color: var(--color-text-muted);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            text-align: center;
+            background: var(--color-text);
+            color: white;
+            border-radius: 24px;
+            padding: 6rem 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            color: #9CA3AF;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-white {
+            background-color: white;
+            color: var(--color-text) !important;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 5rem 0 3rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .footer-desc {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-heading {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid #E5E7EB;
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--color-text-muted);
+            transition: var(--transition);
+        }
+
+        .social-links svg:hover {
+            fill: var(--color-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .grid-two-col, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html">
+                    <span style="font-weight:700;font-size:1.25rem">testing-saas</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-button">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <span class="content-label">Our Mission</span>
+                <h1>Reliable stock data for the modern builder.</h1>
+                <p>We provide stable, high-quality financial data to retail investors, developers, and educators without the enterprise price tag.</p>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid-two-col">
+                    <div class="story-text">
+                        <span class="content-label">The Story</span>
+                        <h2>Born out of frustration.</h2>
+                        <p>Our journey began when our founders—a group of fintech developers and active retail investors—grew tired of the status quo. We found that most free data sources were brittle; APIs would change or break without notice, disrupting dashboards and applications overnight.</p>
+                        <p>Furthermore, we realized that pulling long-term historical data was intentionally made tedious by major providers to force users into expensive subscriptions. We knew there was a better way to serve the community.</p>
+                        <p>Testing-saas was built to solve three core problems: unreliable API endpoints, paywalled historical time series, and the manual formatting required to make data look presentable.</p>
+                    </div>
+                    <div style="background-color: var(--color-surface); border-radius: 12px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary); opacity: 0.5;"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="container">
+            <div class="values-section">
+                <span class="content-label">Our Values</span>
+                <h2>How we work for you</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Stability First</h3>
+                        <p>We promise stable endpoints. When you integrate our API, you build it once. We handle the backend complexity so your tools never break.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Democratized Access</h3>
+                        <p>Financial intelligence shouldn't be a luxury. We provide deep history and real-time quotes to ensure retail investors have the same edge as the pros.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Developer Happiness</h3>
+                        <p>From clean API documentation to auto-generated visuals, we reduce the "time to insight" for developers and content creators alike.</p>
+                    </div>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">API Uptime</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+ Years</span>
+                        <span class="stat-label">Historical Depth</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50k+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who We Serve -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid-two-col">
+                    <div style="background-color: var(--color-surface); border-radius: 12px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary); opacity: 0.5;"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 12V7h5"/><path d="M17 12v5h-5"/><path d="M7 12h10"/></svg>
+                    </div>
+                    <div class="story-text">
+                        <span class="content-label">Our Audience</span>
+                        <h2>Powering the next generation of finance.</h2>
+                        <p><strong>Retail Investors:</strong> Use our simple charting and watchlist tools to monitor the market without a Bloomberg terminal.</p>
+                        <p><strong>Fintech Developers:</strong> Build apps with confidence using our sample code, generous rate limits, and reliable equities data feed.</p>
+                        <p><strong>Educators & Bloggers:</strong> Create beautiful, embeddable charts for your content without spending hours hand-formatting visuals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="container">
+            <div class="final-cta">
+                <h2>Ready to explore the data?</h2>
+                <p>Join thousands of investors and developers who rely on testing-saas for their daily market research and application development.</p>
+                <a href="contact.html" class="cta-white">Get Your Free API Key</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <span style="font-weight:700;font-size:1.25rem">testing-saas</span>
+                    </a>
+                    <p class="footer-desc">Providing reliable, free stock market data for retail investors, developers, and educators. Real-time quotes, deep history, and stable APIs.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="about.html">API Docs</a></li>
+                        <li><a href="index.html">Data Coverage</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">Mission</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Data Attribution</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 testing-saas. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
